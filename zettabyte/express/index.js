@@ -27,10 +27,6 @@ const commentSchema = new mongoose.Schema({
 
 const Comment = mongoose.model("Comment", commentSchema);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.get("/articles", async (req, res) => {
   const articles = await Article.find();
   res.json(articles);
