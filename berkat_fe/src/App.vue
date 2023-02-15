@@ -1,31 +1,35 @@
 <template>
   <div>
-    <ul>
-      <li v-for="movie in movies" :key="movie.title">
-        title = {{ movie.title }}
-      </li>
-      <li v-for="movie in movies" :key="movie.release_date">
-        release =
-        {{ movie.release_date }}
-      </li>
-      <li v-for="movie in movies" :key="movie.popularity">
-        popularity =
-        {{ movie.popularity }}
-      </li>
-      <li v-for="movie in movies" :key="movie.vote_average">
-        vote =
-        {{ movie.vote_average }}
-      </li>
-      <li v-for="movie in movies" :key="movie.category_id">
-        category =
-        {{ movie.category_id }}
-      </li>
-    </ul>
+    <div>
+      <Navbar />
+      <ul>
+        <li v-for="movie in movies" :key="movie.title">
+          title = {{ movie.title }}
+        </li>
+        <li v-for="movie in movies" :key="movie.release_date">
+          release =
+          {{ movie.release_date }}
+        </li>
+        <li v-for="movie in movies" :key="movie.popularity">
+          popularity =
+          {{ movie.popularity }}
+        </li>
+        <li v-for="movie in movies" :key="movie.vote_average">
+          vote =
+          {{ movie.vote_average }}
+        </li>
+        <li v-for="movie in movies" :key="movie.category_id">
+          category =
+          {{ movie.category_id }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   data() {
@@ -43,5 +47,6 @@ export default {
         console.log(error);
       });
   },
+  components: { Navbar },
 };
 </script>
